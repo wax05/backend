@@ -1,0 +1,8 @@
+.venv
+__pychache__
+*.jpg
+*.gif
+*.json
+*.pyc
+test.py
+*.sqlite3
