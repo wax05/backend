@@ -1,12 +1,13 @@
 from flask import Flask
 from extension import db
-from routes.admin import AdminRoute
-from routes.main import MainRoute
+from routes.adminroute.admin import AdminRoute
+from routes.mainroute.main import MainRoute
+from config import config
 def Create_App():
     app = Flask(__name__)
-    app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///db.sqlite3"#
+    app.config.from_object(config.TestConfig)
     app.register_blueprint(MainRoute)
-    app.register_blueprint(AdminRoute)
+    app.register_blueprint(AdminRoute,url_prefix="/admin")
     db.init_app(app)
 
     @app.before_first_request#Sqlite3 Sql Table Init
