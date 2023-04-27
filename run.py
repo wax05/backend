@@ -8,7 +8,7 @@ parser.add_argument("-P","--port",dest="Port",action="store")# -P --port Server 
 Cli_args = parser.parse_args()
 
 if Cli_args.Port == None:
-    Cli_args.Port = 5000 #Flask default Port Value (IP:5000)
+    Cli_args.Port = 5000 #Flask default Port Value (IPv4:5000)
 if Cli_args.Global:
     Cli_args.Global = "0.0.0.0"
 else:

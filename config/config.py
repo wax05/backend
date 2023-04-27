@@ -1,9 +1,10 @@
 import os
+from datetime import timedelta
 
 class BaseConfig:
     DEBUG = False
     TESTING = False
-
+    PERMANENT_SESSION_LIFETIME = timedelta(minutes=1)
 class ProductConfig(BaseConfig):
     SQLALCHEMY_DATABASE_URI = os.getenv("DATABASE_URI")
     SESSION_COOKIE_HTTPONLY = True
@@ -12,4 +13,5 @@ class ProductConfig(BaseConfig):
 class TestConfig(BaseConfig):
     DEBUG = True
     TESTING = True
-    SQLALCHEMY_DATABASE_URI = "sqlite:///db.sqlite3"#TestConfig
+    SECRET_KEY = "HI"
+    SQLALCHEMY_DATABASE_URI = "mysql+pymysql://root:1234@localhost:3306/test_db"#TestConfig
