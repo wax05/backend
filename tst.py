@@ -1,3 +1,3 @@
-from Test.ORMtest import Test
+from Test.ORMtest import *
 
-print(Test())
+print(SqlDataExtact())

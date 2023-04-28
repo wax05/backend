@@ -1,5 +1,4 @@
-from flask import Blueprint, session
-from models.userdata import UserData
+from flask import Blueprint
 
 AdminRoute = Blueprint("AdminRoute", __name__)
 
