@@ -1,5 +1,5 @@
 import argparse
-from app import Create_App
+from app import app
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-T","--test",dest="TestServer",action="store_true")# -T --test TestServer On off option Default value is false
@@ -15,4 +15,4 @@ else:
     Cli_args.Global = "127.0.0.1"
 
 if __name__ == '__main__':
-    Create_App().run(debug=Cli_args.TestServer, host=Cli_args.Global, port=Cli_args.Port)
+    app.run(debug=Cli_args.TestServer, host=Cli_args.Global, port=Cli_args.Port)

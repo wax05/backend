@@ -1,5 +1,5 @@
 from peewee import *
-from base import BaseModel
+from utils.orm.base import BaseModel
 
 class UserData(BaseModel):
     UseriD = CharField(20)
